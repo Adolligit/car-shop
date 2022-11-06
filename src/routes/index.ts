@@ -1,3 +1,8 @@
-import carRoutes from './car.routes';
+import express from 'express';
+import car from './car.routes';
 
-export default { car: carRoutes };
+const routes = express();
+
+routes.use(car);
+
+export default routes;
