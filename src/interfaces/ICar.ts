@@ -9,10 +9,3 @@ const CarSchemaZod = z.object({
 type TypeCar = z.infer<typeof CarSchemaZod>;
 
 export interface ICar extends IVehicle, TypeCar {}
-
-export const carro: IVehicle = {
-  model: '',
-  year: 0,
-  color: '',
-  buyValue: 0,
-};
