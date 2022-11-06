@@ -8,7 +8,4 @@ const VehicleSchemaZod = z.object({
   buyValue: z.number().int(),
 });
 
-type TypeVehicle = z.infer<typeof VehicleSchemaZod>;
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface IVehicle extends TypeVehicle {}
+export type IVehicle = z.infer<typeof VehicleSchemaZod>;
