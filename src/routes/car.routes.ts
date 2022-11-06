@@ -1,7 +1,9 @@
 import express from 'express';
 
+import CarController from '../controllers/car.controlller';
+
 const car = express();
 
-car.get('/' , (_req, res) => res.status(200).json({ message: 'tamo on!' }));
+car.get('/', CarController.all);
 
 export default car;
