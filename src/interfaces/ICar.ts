@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { IVehicle } from './IVehicle';
 
-const CarSchemaZod = z.object({
+export const CarSchemaZod = z.object({
   doorsQty: z.number().int().min(2).max(4),
   seatsQty: z.number().int().min(2).max(7),
 });
