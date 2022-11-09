@@ -7,7 +7,7 @@ import CarService from '../../../services/car.service';
 import CarModel from '../../../models/car.model';
 import { ICar } from '../../../interfaces/ICar';
 
-// before after= executa uma vez antes/depois de todos os testes
+// before, after= executa uma vez antes/depois de todos os testes
 // beforeEach afterEach= executa uma vez antes/depois de cada testes
 
 describe('(Car: Service)', () => {
@@ -16,14 +16,14 @@ describe('(Car: Service)', () => {
   before(() => {
     sinon.stub(CarService, 'create').resolves(mocks.generic);
     sinon.stub(CarService, 'read').resolves([mocks.generic]);
-    // sinon.stub(carModel, 'readOne').resolves({} as ICar);
-    // sinon.stub(carModel, 'update').resolves({} as ICar);
-    // sinon.stub(carModel, 'delete').resolves({} as ICar);
+    sinon.stub(CarService, 'readOne').resolves(mocks.generic);
+    sinon.stub(CarService, 'update').resolves(mocks.generic);
+    sinon.stub(CarService, 'delete').resolves(mocks.generic);
   });
 
   it('{ function: create }.', async () => {
     const created = await CarService.create({} as ICar);
-
+    
     expect(created).to.be.deep.equal(mocks.generic);
   });
 
@@ -33,21 +33,21 @@ describe('(Car: Service)', () => {
     expect(found).to.be.deep.equal(mocks.generic);
   });
 
-  // it('{ function: readOne }.', async () => {
-  //   const readed = await CarService.readOne('oie');
+  it('{ function: readOne }.', async () => {
+    const readed = await CarService.readOne('oie');
 
-  //   expect(readed).to.be.deep.equal(mocks.generic);
-  // });
+    expect(readed).to.be.deep.equal(mocks.generic);
+  });
 
-  // it('{ function: update }.', async () => {
-  //   const readed = await CarService.update('oie', {} as ICar);
+  it('{ function: update }.', async () => {
+    const readed = await CarService.update('oie', {} as ICar);
 
-  //   expect(readed).to.be.deep.equal(mocks.generic);
-  // });
-  // it('{ function: delete }.', async () => {
-  //   const readed = await CarService.delete('oie');
+    expect(readed).to.be.deep.equal(mocks.generic);
+  });
+  it('{ function: delete }.', async () => {
+    const readed = await CarService.delete('oie');
 
-  //   expect(readed).to.be.deep.equal(mocks.generic);
-  // });
+    expect(readed).to.be.deep.equal(mocks.generic);
+  });
 
 });

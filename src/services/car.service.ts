@@ -11,9 +11,27 @@ class CarService {
   }
 
   public static async read() {
-    const created = await this._carModel.read();
+    const wasRead = await this._carModel.read();
 
-    return created;
+    return wasRead;
+  }
+
+  public static async readOne(id: string) {
+    const wasFound = await this._carModel.readOne(id);
+
+    return wasFound;
+  }
+
+  public static async update(id: string, payload: ICar) {
+    const updated = await this._carModel.update(id, payload);
+
+    return updated;
+  }
+
+  public static async delete(id: string) {
+    const deleted = await this._carModel.delete(id);
+
+    return deleted;
   }
 }
 
