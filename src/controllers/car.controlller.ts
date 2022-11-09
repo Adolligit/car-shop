@@ -1,6 +1,10 @@
 import { Request, Response } from 'express';
+import CarService from '../services/car.service';
 
-const all = (_req: Request, res: Response<{ message: string }>) => res
-  .status(200).send({ message: 'tamo on!' });
+class CarController {
+  public static async create(req: Request, res: Response) {
+    return res.status(201).json(await CarService.create(req.body));
+  }
+}
 
-export default { all };
+export default CarController;

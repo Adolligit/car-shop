@@ -1,5 +1,5 @@
 import { Schema, model as modelMongoose, Model, UpdateQuery } from 'mongoose';
-import { IModel } from '../interfaces/IModel';
+import { IModel } from '../../interfaces/IModel';
 
 abstract class MongooseModel<T> implements IModel<T> {
   protected _model: Model<T>;

@@ -1,5 +1,5 @@
 import express from 'express';
-import ErrorHandler from '../errors/CatchAllMethodsErrors';
+import ErrorHandler from '../middlewares/error.middleware';
 import car from './car.routes';
 
 const routes = express();
