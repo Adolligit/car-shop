@@ -1,4 +1,4 @@
-const create = {
+const generic = {
   "_id": "636b6c1bd7bdda04cbb9a40e",
   "model": "BMW I8 Roadster",
   "year": 2020,
@@ -8,4 +8,4 @@ const create = {
   "doorsQty": 2
 }
 
-export default { create };
+export default { generic };
