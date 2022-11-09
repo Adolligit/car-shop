@@ -1,10 +1,10 @@
-import { NextFunction, Request, Response } from 'express';
+class CatchAllMethodsErros extends Error {
+  _status: number;
 
-export default (
-  { message, stack: status }: Error,
-  _req: Request,
-  res: Response,
-  _nxt: NextFunction,
-) => res
-  .status(Number(status) || 500) // ai esse Number por causa do TS zzzzzz
-  .json({ message }); 
+  constructor(message: string, status: number) {
+    super(message);
+    this._status = status;
+  }
+}
+
+export default CatchAllMethodsErros;
