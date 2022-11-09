@@ -9,6 +9,14 @@ class CarService {
 
     return { _id: created._id, ...obj } as ICar;
   }
+
+  public static async read() {
+    const created = await this._carModel.read();
+
+    return created;
+  }
 }
+
+
 
 export default CarService;

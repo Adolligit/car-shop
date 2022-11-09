@@ -11,8 +11,8 @@ import { ICar } from '../../../interfaces/ICar';
 // beforeAll afterAll= executa uma vez antes de cada testes
 
 describe('(Car: Model)', () => {
-  const carModel = new CarModel('Car');
-
+  const carModel = new CarModel('CarModel');
+  
   after(() => sinon.restore());
   before(() => {
     sinon.stub(Model, 'create').resolves(mocks.generic);
@@ -21,7 +21,7 @@ describe('(Car: Model)', () => {
     sinon.stub(Model, 'findOneAndUpdate').resolves(mocks.generic);
     sinon.stub(Model, 'findOneAndDelete').resolves(mocks.generic);
   });
-
+  
   it('{ function: create }.', async () => {
     const created = await carModel.create(mocks.generic);
 
@@ -50,5 +50,4 @@ describe('(Car: Model)', () => {
 
     expect(readed).to.be.deep.equal(mocks.generic);
   });
-
 });
