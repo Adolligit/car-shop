@@ -39,10 +39,21 @@ describe('(Car: Service)', () => {
   });
 
   it('{ function: update }.', async () => {
+    sinon.stub(carModel, 'readOne').resolves(mocks.generic);
     sinon.stub(carModel, 'update').resolves(mocks.generic);
-    const readed = await carService.update('oie', {} as ICar);
+    const readed = await carService.update('oie', mocks.generic);
     
     expect(readed).to.be.deep.equal(mocks.generic);
+  });
+
+  it('{ function: update } com errro.', async () => {
+    sinon.stub(carModel, 'update').resolves(mocks.generic);
+    sinon.stub(carModel, 'readOne').resolves({} as ICar);
+    try {
+      await carService.update('636c71060b7b6eb1c0b0c464', {} as ICar);
+    } catch (error) { 
+      expect(error).to.be.an('error');
+    }
   });
 
   it('{ function: delete }.', async () => {
