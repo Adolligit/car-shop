@@ -1,11 +1,16 @@
-import { Schema, model as modelMongoose, Model, UpdateQuery } from 'mongoose';
+import {
+  Schema,
+  model as modelMongoose,
+  Model,
+  UpdateQuery,
+} from 'mongoose';
 import { IModel } from '../../interfaces/IModel';
 
 abstract class MongooseModel<T> implements IModel<T> {
   protected _model: Model<T>;
 
-  constructor(nameModel: string) {
-    this._model = modelMongoose(nameModel, new Schema<T>());
+  constructor(nameModel: string, schema: Schema) {
+    this._model = modelMongoose(nameModel, schema);
   }
   
   public create = async (obj: T): Promise<T> => this._model.create({ ...obj });
