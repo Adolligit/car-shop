@@ -1,5 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
+import { isValidObjectId } from 'mongoose';
 import { ZodError } from 'zod';
+
 import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
 import { CarSchemaZod } from '../interfaces/ICar';
 import { VehicleSchemaZod } from '../interfaces/IVehicle';
@@ -16,6 +18,14 @@ class CarMiddleware {
 
       throw new CatchAllMethodsErros(`${path[0]}: ${message}`, 400);
     }
+  }
+  
+  public static idMongoValidation(req: Request, _res: Response, nxt: NextFunction) {
+    if (!isValidObjectId(req.params.id)) {
+      throw new CatchAllMethodsErros('Id must have 24 hexadecimal characters', 400);
+    }
+    
+    nxt();
   }
 }
 

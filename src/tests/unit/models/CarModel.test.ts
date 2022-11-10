@@ -45,6 +45,7 @@ describe('(Car: Model)', () => {
 
     expect(readed).to.be.deep.equal(mocks.generic);
   });
+
   it('{ function: delete }.', async () => {
     const readed = await carModel.delete('oie');
 

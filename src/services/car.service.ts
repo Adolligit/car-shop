@@ -1,3 +1,4 @@
+import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
 import { ICar } from '../interfaces/ICar';
 import CarModel from '../models/car.model';
 
@@ -18,11 +19,13 @@ class CarService {
     return wasRead;
   }
 
-  // public async readOne(id: string) {
-  //   const wasFound = await this._carModel.readOne(id);
+  public async readOne(id: string) {
+    const wasFound = await this._carModel.readOne(id);
 
-  //   return wasFound;
-  // }
+    if (!wasFound) throw new CatchAllMethodsErros('Object not found', 404);
+
+    return wasFound;
+  }
 
   // public async update(id: string, payload: ICar) {
   //   const updated = await this._carModel.update(id, payload);

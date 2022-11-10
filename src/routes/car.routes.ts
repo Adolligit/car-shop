@@ -17,6 +17,11 @@ car.post(
   (req, res, nxt) => middleware.inputValidation(req, res, nxt), 
   (req, res) => controller.create(req, res),
 );
+car.get(
+  '/:id',
+  (req, res, nxt) => middleware.idMongoValidation(req, res, nxt),
+  (req, res) => controller.readOne(req, res),
+);
 car.get('/', (req, res) => controller.read(req, res));
 
 export default car;

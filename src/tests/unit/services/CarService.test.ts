@@ -19,7 +19,7 @@ describe('(Car: Service)', () => {
   before(() => {
     sinon.stub(carService, 'create').resolves(mocks.generic);
     sinon.stub(carService, 'read').resolves([mocks.generic]);
-    // sinon.stub(carService, 'readOne').resolves(mocks.generic);
+    sinon.stub(carService, 'readOne').resolves(mocks.generic);
     // sinon.stub(carService, 'update').resolves(mocks.generic);
     // sinon.stub(carService, 'delete').resolves(mocks.generic);
   });
@@ -36,11 +36,11 @@ describe('(Car: Service)', () => {
     expect(found).to.be.deep.equal(mocks.generic);
   });
 
-  // it('{ function: readOne }.', async () => {
-  //   const readed = await carService.readOne('oie');
+  it('{ function: readOne }.', async () => {
+    const readed = await carService.readOne('oie');
 
-  //   expect(readed).to.be.deep.equal(mocks.generic);
-  // });
+    expect(readed).to.be.deep.equal(mocks.generic);
+  });
 
   // it('{ function: update }.', async () => {
   //   const readed = await carService.update('oie', {} as ICar);

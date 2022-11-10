@@ -8,4 +8,4 @@ export default (
   _nxt: NextFunction,
 ) => res
   .status(err.getStatus() || 500) // ai esse Number por causa do TS zzzzzz
-  .json({ messag: err.message }); 
+  .json({ error: err.message }); 
