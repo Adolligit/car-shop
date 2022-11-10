@@ -41,6 +41,9 @@ class CarService {
   }
 
   public async delete(id: string) {
+    const wasFound = await this._carModel.readOne(id);
+    
+    if (!wasFound) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 404);
     const deleted = await this._carModel.delete(id);
 
     return deleted;

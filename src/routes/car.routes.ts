@@ -29,7 +29,7 @@ car.put(
   (req, res) => controller.update(req, res),
 );
 car.delete(
-  '/',
+  '/:id',
   (req, res, nxt) => middleware.idMongoValidation(req, res, nxt),
   (req, res) => controller.delete(req, res),
 );
