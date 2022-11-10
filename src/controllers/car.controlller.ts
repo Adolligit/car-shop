@@ -18,13 +18,15 @@ class CarController {
     return res.status(200).json(await this._carService.readOne(req.params.id));
   }
 
-  // public async update(req: Request, res: Response) {
-  //   return res.status(200).json(await this._carService.read());
-  // }
+  public async update(req: Request, res: Response) {
+    const { id } = req.params;
 
-  // public async delete(req: Request, res: Response) {
-  //   return res.status(200).json(await this._carService.read());
-  // }
+    return res.status(200).json(await this._carService.update(id, req.body));
+  }
+
+  public async delete(req: Request, res: Response) {
+    return res.status(200).json(await this._carService.delete(req.params.id));
+  }
 }
 
 export default CarController;

@@ -2,6 +2,8 @@ import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
 import { ICar } from '../interfaces/ICar';
 import CarModel from '../models/car.model';
 
+const REFATORA_ESSE_CODIGO = 'Object not found';
+
 class CarService {
   private _carModel: CarModel;
 
@@ -22,14 +24,19 @@ class CarService {
   public async readOne(id: string) {
     const wasFound = await this._carModel.readOne(id);
 
-    if (!wasFound) throw new CatchAllMethodsErros('Object not found', 404);
+    if (!wasFound) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 404);
 
     return wasFound;
   }
 
   public async update(id: string, payload: ICar) {
-    const updated = await this._carModel.update(id, payload);
+    const wasFound = await this._carModel.readOne(id);
+    
+    if (!wasFound) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 404);
+    if (!payload.model) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 400);
 
+    const updated = await this._carModel.update(id, { ...payload });
+    
     return updated;
   }
 

@@ -23,5 +23,15 @@ car.get(
   (req, res) => controller.readOne(req, res),
 );
 car.get('/', (req, res) => controller.read(req, res));
+car.put(
+  '/:id',
+  (req, res, nxt) => middleware.idMongoValidation(req, res, nxt),
+  (req, res) => controller.update(req, res),
+);
+car.delete(
+  '/',
+  (req, res, nxt) => middleware.idMongoValidation(req, res, nxt),
+  (req, res) => controller.delete(req, res),
+);
 
 export default car;
