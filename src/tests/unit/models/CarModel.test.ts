@@ -15,7 +15,7 @@ describe('(Car: Model)', () => {
   
   after(() => sinon.restore());
   before(() => {
-    sinon.stub(Model, 'create').resolves();
+    sinon.stub(Model, 'create').resolves(mocks.generic);
     sinon.stub(Model, 'find').resolves([mocks.generic]);
     sinon.stub(Model, 'findOne').resolves(mocks.generic);
     sinon.stub(Model, 'findOneAndUpdate').resolves(mocks.generic);

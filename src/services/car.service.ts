@@ -12,11 +12,11 @@ class CarService {
     return created as ICar;
   }
 
-  // public async read() {
-  //   const wasRead = await this._carModel.read();
-
-  //   return wasRead;
-  // }
+  public async read() {
+    const wasRead = await this._carModel.read();
+    
+    return wasRead;
+  }
 
   // public async readOne(id: string) {
   //   const wasFound = await this._carModel.readOne(id);

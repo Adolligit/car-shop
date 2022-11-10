@@ -9,6 +9,10 @@ class CarController {
   public async create(req: Request, res: Response) {
     return res.status(201).json(await this._carService.create(req.body));
   }
+
+  public async read(req: Request, res: Response) {
+    return res.status(200).json(await this._carService.read());
+  }
 }
 
 export default CarController;

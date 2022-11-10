@@ -17,5 +17,6 @@ car.post(
   (req, res, nxt) => middleware.inputValidation(req, res, nxt), 
   (req, res) => controller.create(req, res),
 );
+car.get('/', (req, res) => controller.read(req, res));
 
 export default car;
