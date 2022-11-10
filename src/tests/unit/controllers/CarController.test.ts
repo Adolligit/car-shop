@@ -24,8 +24,9 @@ describe('(Car: Controller)', () => {
   
   afterEach(() => sinon.restore());
   before(() => {
-    response.status = Sinon.stub().returns(response);
+    response.status = sinon.stub().returns(response);
     response.json = sinon.stub().returns(undefined);
+    response.end = sinon.stub().returns(undefined);
   });
   
   it('{ function: create }.', async () => {
