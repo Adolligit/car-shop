@@ -11,11 +11,11 @@ import { ICar } from '../../../interfaces/ICar';
 // beforeAll afterAll= executa uma vez antes de cada testes
 
 describe('(Car: Model)', () => {
-  const carModel = new CarModel('CarModel');
+  const carModel = new CarModel();
   
   after(() => sinon.restore());
   before(() => {
-    sinon.stub(Model, 'create').resolves(mocks.generic);
+    sinon.stub(Model, 'create').resolves();
     sinon.stub(Model, 'find').resolves([mocks.generic]);
     sinon.stub(Model, 'findOne').resolves(mocks.generic);
     sinon.stub(Model, 'findOneAndUpdate').resolves(mocks.generic);
