@@ -27,17 +27,17 @@ class CarService {
     return wasFound;
   }
 
-  // public async update(id: string, payload: ICar) {
-  //   const updated = await this._carModel.update(id, payload);
+  public async update(id: string, payload: ICar) {
+    const updated = await this._carModel.update(id, payload);
 
-  //   return updated;
-  // }
+    return updated;
+  }
 
-  // public async delete(id: string) {
-  //   const deleted = await this._carModel.delete(id);
+  public async delete(id: string) {
+    const deleted = await this._carModel.delete(id);
 
-  //   return deleted;
-  // }
+    return deleted;
+  }
 }
 
 export default CarService;
