@@ -46,7 +46,7 @@ describe('(Car: Service)', () => {
     expect(readed).to.be.deep.equal(mocks.generic);
   });
 
-  it('{ function: update } com errro.', async () => {
+  it('{ function: update } com erro.', async () => {
     sinon.stub(carModel, 'update').resolves(mocks.generic);
     sinon.stub(carModel, 'readOne').resolves({} as ICar);
     try {
@@ -57,10 +57,21 @@ describe('(Car: Service)', () => {
   });
 
   it('{ function: delete }.', async () => {
+    sinon.stub(carModel, 'readOne').resolves(mocks.generic);
     sinon.stub(carModel, 'delete').resolves(mocks.generic);
     const readed = await carService.delete('oie');
 
     expect(readed).to.be.deep.equal(mocks.generic);
+  });
+
+  it('{ function: delete } com erro.', async () => {
+    sinon.stub(carModel, 'readOne').resolves({} as ICar);
+    sinon.stub(carModel, 'delete').resolves(mocks.generic);
+    try {
+      await carService.delete('636c71060b7b6eb1c0b0c464');
+    } catch (error) { 
+      expect(error).to.be.an('error');
+    }
   });
 
 });
