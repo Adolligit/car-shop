@@ -1,13 +1,7 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<h1 align="center">Car Shop</h1>
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Car Shop é uma *API Rest* que consulta o banco de dados não relacional MongoDB através do *ODM* Mongoose.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Esta API é um *CRUD* feito com os princípios da *Programação Orientada á Objetos (POO)* e seu propósito é simular o gerenciamento de um sistema de uma concessionária de veículos.
+
+Este projeto foi desenvolvido em **Node.js + Express.js + TypeScript**, utilizando **Mongoose.js** para comunicação com o banco de dados **MongoDB**. Além disso, foram realizados testes nas camadas *Model, Controller e Service* com **Mocha + Chai + Sinon**.
