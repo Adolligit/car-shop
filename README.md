@@ -71,3 +71,6 @@ npm run test:coverage
 
 ## Agradecimento
 Agradeço pela [@tryber](https://github.com/tryber) pela idealização do projeto, pois desta forma foi possível colocar em prática meus conhecimentos sobre a criação de API Rest. Não é uma experiência de mercado, mas uma experiência de projeto extremamente importante para o meu desenvolvimento profissional. Muito obrigado!
+
+
+<!-- Ta faltando descrever a instalação do projeto com o Dockerfile / docker-compose.yml -->
