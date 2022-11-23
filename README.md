@@ -26,7 +26,7 @@ Depois disso, siga com a instalação do **Car Shop**.
 <details>
 <summary><b>Instalação do Car Shop</b></summary>
 
-Clone o repositório na sua máquina local:
+Clone o projeto na sua máquina local:
 ```bash
 git clone git@github.com:Adolligit/car-shop.git
 ```
