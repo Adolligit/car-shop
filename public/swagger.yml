@@ -34,7 +34,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/error_required_field'
+                $ref: '#/components/schemas/error'
+              example:
+                message: 'doorsQty: Required'
     get:
       tags:
         - Cars
@@ -49,7 +51,41 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/response_car'
-          
+  /cars/{id}:
+    get:
+      tags:
+        - Cars
+      parameters:
+        - name: id
+          in: path
+          description: Buscar produto pelo ID
+          required: true
+      summary: Retornará dados específicos
+      description: Ao pesquisar pelo ID, retornará todos os dados relacionados ao carro específico.
+      responses:
+        200:
+          description: Retorna os dados relacionados ao carro.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response_car'
+        400:
+          description: Um erro é retornando quando o ID de busca possui mais ou menos do que 24 caracteres.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              example:
+                message: 'error: Id must have 24 hexadecimal characters'
+        404:
+          description: Um erro é retornando quando nenhum ID for encontrado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              example:
+                message: 'error: Object not found'
+
 components:
   schemas:
 
@@ -174,9 +210,3 @@ components:
         buyValue: 100110
         category: Street
         engineCapacity: 77.01
-    
-    error_required_field:
-      allOf:
-        - $ref: '#/components/schemas/error'
-      example:
-        message: 'doorsQty: Required'
