@@ -5,5 +5,8 @@
   ],
   "cSpell.words": [
     "Adelson"
-  ]
+  ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/yamllint.json": "file:///home/adelson/Workspaces/vs-code/car-shop/public/swagger.yml"
+  }
 }

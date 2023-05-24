@@ -35,15 +35,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/error_required_field'
-
     get:
       tags:
         - Cars
-      summary: Retornará todos os dados relacionados aos carros
+      summary: Retornará todos os dados
+      description: Irá retornar todos os dados relacionados aos carros registrados.
       responses:
         200:
-          description: Um JSON com todos os dados relacionados a todos os carros registrados.
-
+          description: Retorna todos os dados relacionados á todos os carros registrados no banco. Retornará um objeto vazio, caso não haja dados registrados.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/response_car'
+          
 components:
   schemas:
 
@@ -174,4 +180,3 @@ components:
         - $ref: '#/components/schemas/error'
       example:
         message: 'doorsQty: Required'
-
