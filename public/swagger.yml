@@ -1,0 +1,139 @@
+openapi: 3.0.1
+info:
+  title: Car Shop
+  description: É uma API REST criada para simular uma loja de veículos, onde há a possibilidade de registrar, editar, visualizar e excluir os dados relacionados aos veículos. Foi desenvolvida a partir do paradigma da OOP e nesta API há somente duas entidade, Motos (Motorcycles) e Carros (Cars), para processamento do CRUD. Toda base de dados fica no banco NoSQL MongoDB, onde a comunicação é feita através do ODM Mongoose.js,
+  version: 1.0.0
+  contact: 
+    name: Adelson
+    url: https://www.linkedin.com/in/adelson-lima/
+servers:
+  - url: http://localhost:3001/v1/
+    description: A porta depende do valor da variável NOME_DA_VARIÁVEL
+paths:
+  /cars:
+    post:
+      tags:
+        - Cars
+      summary: Criará um registro
+      description: Vai criar um registro dos dados do carro informado.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/example_body_car'
+      responses:
+        201:
+          description: Um JSON com os dados utilizados para registro será retornado junto a um ID.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/response_car'
+    get:
+      tags:
+        - Cars
+      summary: Retornará todos os dados relacionados aos carros
+      responses:
+        200:
+          description: Um JSON com todos os dados relacionados a todos os carros registrados.
+
+components:
+  schemas:
+    mongo_id: 
+      type: object
+      properties:
+        _id:
+          type: string
+      required:
+        - _id
+
+    vehicle:
+      type: object
+      properties:
+        model:
+          type: string
+        year:
+          type: number
+        color:
+          type: string
+        status:
+          type: boolean
+        buyValue:
+          type: number
+      required:
+        - model
+        - year
+        - color
+        - status
+        - buyValue
+  
+    car:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/vehicle'
+        - properties:
+            doorsQty: 
+              type: number
+            seatsQty: 
+              type: number
+        - required:
+            - doorsQty
+            - seatsQty
+
+    motorcycle:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/vehicle'
+        - properties:
+            category:
+              type:
+                enum:
+                  - Street
+                  - Custom
+                  - Trail
+            engineCapacity:
+              type: number
+        - required:
+            - category
+            - engineCapacity
+
+    example_body_car:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/car'
+      example:
+        model: GLC 43 AMG
+        year: 2022
+        status: true
+        color: black
+        buyValue: 464930.00
+        doorsQty: 4
+        seatsQty: 5
+
+    example_body_motorcycle:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/motorcycle'
+      example:
+        model: Ducati Diavel 1260
+        year: 2020
+        status: true
+        color: red
+        buyValue: 100110
+        category: Street
+        engineCapacity: 77.01
+    
+    response_car:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/mongo_id'
+        - $ref: '#/components/schemas/example_body_car'
+      example:
+        _id: 6461366e2e015611bfd71f4c
+        model: GLC 43 AMG
+        year: 2022
+        status: true
+        color: black
+        buyValue: 464930.00
+        doorsQty: 4
+        seatsQty: 5
