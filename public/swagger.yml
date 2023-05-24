@@ -21,7 +21,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/example_body_car'
-      responses:
+      responses:  
         201:
           description: Um JSON com os dados utilizados para registro será retornado junto a um ID.
           content:
@@ -29,6 +29,13 @@ paths:
               schema:
                 allOf:
                   - $ref: '#/components/schemas/response_car'
+        400:
+          description: Um JSON com uma mensagem de erro será retornada caso um dos campos obrigatórios não seja informado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_required_field'
+
     get:
       tags:
         - Cars
@@ -39,6 +46,15 @@ paths:
 
 components:
   schemas:
+
+    error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+
     mongo_id: 
       type: object
       properties:
@@ -137,3 +153,25 @@ components:
         buyValue: 464930.00
         doorsQty: 4
         seatsQty: 5
+    
+    response_motorcycle:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/mongo_id'
+        - $ref: '#/components/schemas/example_body_motorcycle'
+      example:
+        _id: 6461366e2e015611bfd71f4c
+        model: Ducati Diavel 1260
+        year: 2020
+        status: true
+        color: red
+        buyValue: 100110
+        category: Street
+        engineCapacity: 77.01
+    
+    error_required_field:
+      allOf:
+        - $ref: '#/components/schemas/error'
+      example:
+        message: 'doorsQty: Required'
+
