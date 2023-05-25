@@ -8,7 +8,7 @@ info:
     url: https://www.linkedin.com/in/adelson-lima/
 servers:
   - url: http://localhost:API_PORT/v1/
-    description: Se não houver valor para a variável API_PORT, por padrão será 3001.
+    description: API_PORT é referente ao valor da variável informada no arquivo '.env'
 paths:
   /cars:
     post:
