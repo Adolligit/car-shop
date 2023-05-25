@@ -45,7 +45,7 @@ paths:
       description: Irá retornar todos os dados relacionados aos carros registrados.
       responses:
         200:
-          description: Retorna todos os dados relacionados á todos os carros registrados no banco. Retornará um objeto vazio, caso não haja dados registrados.
+          description: Retorna todos os dados relacionados á todos os carros registrados no banco. Retornará um array vazio, caso não haja dados registrados.
           content:
             application/json:
               schema:
@@ -154,7 +154,7 @@ paths:
       description: Irá retornar todos os dados relacionados as motos registradas.
       responses:
         200:
-          description: Retorna todos os dados relacionados á todas as motos registrados no banco. Retornará um objeto vazio, caso não haja dados registrados.
+          description: Retorna todos os dados relacionados á todas as motos registrados no banco. Retornará um array vazio, caso não haja dados registrados.
           content:
             application/json:
               schema:
