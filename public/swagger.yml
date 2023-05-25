@@ -17,6 +17,7 @@ paths:
       summary: Criará um registro
       description: Vai criar um registro dos dados do carro informado.
       requestBody:
+        required: true
         content:
           application/json:
             schema:
@@ -72,17 +73,16 @@ paths:
         400:
           $ref: '#/components/responses/400'
         404:
-          $ref: '#/components/responses/404'
-                
+          $ref: '#/components/responses/404'           
     put:
       tags:
         - Cars
       parameters:
         - name: id
           in: path
-          description: Informe o ID
+          description: Por favor, informe o ID do registro.
           required: true
-      summary: Atualizará os registros.
+      summary: Atualizará os registros
       description: Informando o ID, uma verificação será realizada para validar a sintaxe e a existência do seu registro. Em resultado positivo, irá atualizar os dados relacionados ao carro e retornará esses dados junto ao ID.
       requestBody:
         required: true
@@ -98,6 +98,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/response_car'
+        400: 
+          $ref: '#/components/responses/400'
+        404:
+          $ref: '#/components/responses/404'
+    delete:
+      tags:
+      - Cars
+      parameters:
+        - name: id
+          in: path
+          description: Por favor, informe o ID do registro.
+          required: true
+      summary: Apagará os registros
+      description: Uma verificação da existência dos dados será feita através do ID. Em resultado positivo, não irá retornar nenhum conteúdo e deletará os dados relacionados ao carro. Caso contrário, erros variados serão retornados.
+      responses:
+        204:
+          description: Apagará todos os dados relacionados ao ID informado. Não há nenhum conteúdo de retorno.
         400: 
           $ref: '#/components/responses/400'
         404:
