@@ -31,7 +31,7 @@ paths:
                 allOf:
                   - $ref: '#/components/schemas/response_car'
         400:
-          description: Um JSON com uma mensagem de erro será retornada caso um dos campos obrigatórios não seja informado.
+          description: Um JSON com uma mensagem de erro será retornado caso um dos campos obrigatórios não seja informado.
           content:
             application/json:
               schema:
@@ -119,6 +119,34 @@ paths:
           $ref: '#/components/responses/400'
         404:
           $ref: '#/components/responses/404'
+  /motorcycles:
+    post:
+      tags:
+        - Motorcycles
+      summary: Criará um registro
+      description: Vai criar um registro dos dados da moto informada.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/example_body_motorcycle'
+      responses:  
+        201:
+          description: Um JSON com os dados utilizados para registro será retornado junto a um ID.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/response_motorcycle'
+        400:
+          description: Um JSON com uma mensagem de erro será retornado caso um dos campos obrigatórios não seja informado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              example:
+                message: "category: Invalid enum value. Expected 'Street' | 'Custom' | 'Trail', received undefined"
 
 components:
   schemas:
@@ -249,15 +277,15 @@ components:
       schema:
         $ref: '#/components/schemas/error'
       example:
-        message: 'error: Object not found'
+        message: Object not found
     
     error_amount_characters:
       type: object
       schema:
         $ref: '#/components/schemas/error'
       example:
-        message: 'error: Id must have 24 hexadecimal characters'
-  
+        message: Id must have 24 hexadecimal characters
+
   responses:
     '400':
       description: Um erro é retornando quando o ID de busca possui mais ou menos do que 24 caracteres.
