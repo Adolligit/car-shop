@@ -161,6 +161,29 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/response_motorcycle'
+  /motorcycles/{id}:
+    get:
+      tags:
+        - Motorcycles
+      parameters:
+        - name: id
+          in: path
+          description: Buscar produto pelo ID
+          required: true
+      summary: Retornará dados específicos
+      description: Ao pesquisar pelo ID, retornará todos os dados relacionados a moto específica.
+      responses:
+        200:
+          description: Retorna os dados relacionados á moto.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response_motorcycle'
+        400:
+          $ref: '#/components/responses/400'
+        404:
+          $ref: '#/components/responses/404'
+
 
 components:
   schemas:
