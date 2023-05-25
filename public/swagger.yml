@@ -7,8 +7,8 @@ info:
     name: Adelson
     url: https://www.linkedin.com/in/adelson-lima/
 servers:
-  - url: http://localhost:PORT/v1/
-    description: Se não houver valor para a variável PORT, por padrão será 3001.
+  - url: http://localhost:API_PORT/v1/
+    description: Se não houver valor para a variável API_PORT, por padrão será 3001.
 paths:
   /cars:
     post:
