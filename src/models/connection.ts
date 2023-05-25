@@ -1,11 +1,15 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
 
-const MONGO_DB_URL = 'mongodb://127.0.0.1:27017/CarShop';
+const HOST = process.env.MDB_HOST;
+const PORT = process.env.MDB_PORT;
+const NAME = process.env.MDB_NAME;
+
+const MDB_LOCAL = `mongodb://${HOST}:${PORT}/${NAME}`;
 
 const connectToDatabase = (
-  mongoDatabaseURI = process.env.MONGO_URI
-    || MONGO_DB_URL,
+  mongoDatabaseURI = process.env.MDB_URI
+    || MDB_LOCAL,
 ) => mongoose.connect(mongoDatabaseURI);
 
 export default connectToDatabase;

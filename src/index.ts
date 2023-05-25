@@ -2,7 +2,7 @@ import 'dotenv/config';
 import app from './app';
 import connectToDatabase from './models/connection';
 
-const PORT = process.env.API_PORT || 3001;
+const PORT = process.env.API_PORT;
 
 connectToDatabase()
   .then(() => app.listen(PORT, () => console.log(`Running server on port: ${PORT}`)))
