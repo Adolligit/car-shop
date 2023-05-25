@@ -7,8 +7,8 @@ info:
     name: Adelson
     url: https://www.linkedin.com/in/adelson-lima/
 servers:
-  - url: http://localhost:3001/v1/
-    description: A porta depende do valor da variável NOME_DA_VARIÁVEL
+  - url: http://localhost:PORT/v1/
+    description: Se não houver valor para a variável PORT, por padrão será 3001.
 paths:
   /cars:
     post:
