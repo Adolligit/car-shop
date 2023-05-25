@@ -2,7 +2,7 @@ import express from 'express';
 import 'express-async-errors';
 
 import CarModel from '../models/car.model';
-import CarController from '../controllers/car.controlller';
+import CarController from '../controllers/car.controller';
 import CarService from '../services/car.service';
 import middleware from '../middlewares/car.middleware';
 

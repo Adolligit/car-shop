@@ -2,7 +2,7 @@ import express from 'express';
 import 'express-async-errors';
 
 import MotorcycleModel from '../models/motorcycle.model';
-import MotorcycleController from '../controllers/motorcycle.controlller';
+import MotorcycleController from '../controllers/motorcycle.controller';
 import MotorcycleService from '../services/motorcycle.service';
 import middleware from '../middlewares/motorcycle.middleware';
 
