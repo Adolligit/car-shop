@@ -2,9 +2,9 @@ import yaml from 'yaml';
 import fs from 'fs';
 
 function converted(yamlFile:string) {
-  const readed = fs.readFileSync(yamlFile, 'utf8');
+  const read = fs.readFileSync(yamlFile, 'utf8');
 
-  return yaml.parse(readed);
+  return yaml.parse(read);
 }
 
 export default converted;
