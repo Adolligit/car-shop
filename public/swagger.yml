@@ -183,7 +183,34 @@ paths:
           $ref: '#/components/responses/400'
         404:
           $ref: '#/components/responses/404'
-
+    put:
+      tags:
+        - Motorcycles
+      parameters:
+        - name: id
+          in: path
+          description: Por favor, informe o ID do registro.
+          required: true
+      summary: Atualizará os registros
+      description: Informando o ID, uma verificação será realizada para validar a sintaxe e a existência do seu registro. Em resultado positivo, irá atualizar os dados relacionados á moto e retornará esses dados junto ao ID.
+      requestBody:
+        required: true
+        description: Aqui no Swagger, as informações retornadas um pouco diferentes das retornadas por um Client API, como Postman, por exemplo. 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/example_body_motorcycle'
+      responses:
+        200:
+          description: Atualiza e retorna os dados relacionados á moto.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response_moto'
+        400: 
+          $ref: '#/components/responses/400'
+        404:
+          $ref: '#/components/responses/404'
 
 components:
   schemas:
