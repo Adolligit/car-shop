@@ -147,6 +147,20 @@ paths:
                 $ref: '#/components/schemas/error'
               example:
                 message: "category: Invalid enum value. Expected 'Street' | 'Custom' | 'Trail', received undefined"
+    get:
+      tags:
+        - Motorcycles
+      summary: Retornará todos os dados
+      description: Irá retornar todos os dados relacionados as motos registradas.
+      responses:
+        200:
+          description: Retorna todos os dados relacionados á todas as motos registrados no banco. Retornará um objeto vazio, caso não haja dados registrados.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/response_motorcycle'
 
 components:
   schemas:
