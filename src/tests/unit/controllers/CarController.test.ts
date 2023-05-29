@@ -8,7 +8,7 @@ import { ICar } from '../../../interfaces/ICar';
 
 import mocks from '../../mocks/CarModel';
 import CarModel from '../../../models/car.model';
-import CarController from '../../../controllers/car.controlller';
+import CarController from '../../../controllers/car.controller';
 import CarService from '../../../services/car.service';
 
 // before after= executa uma vez antes de todos os testes

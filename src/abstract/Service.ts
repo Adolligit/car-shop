@@ -1,7 +1,6 @@
+import httpStatus from 'http-status';
 import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
 import { IModel } from '../interfaces/IModel';
-
-const REFATORA_ESSE_CODIGO = 'Object not found';
 
 abstract class Service<T> implements IModel<T> {
   private _model: IModel<T>;
@@ -25,7 +24,7 @@ abstract class Service<T> implements IModel<T> {
   public async readOne(id: string): Promise<T | null> {
     const wasFound = await this._model.readOne(id);
 
-    if (!wasFound) throw new CatchAllMethodsErros('Object not found', httpSta);
+    if (!wasFound) throw new CatchAllMethodsErros('Object not found', httpStatus.NOT_FOUND);
 
     return wasFound;
   }
@@ -39,9 +38,8 @@ abstract class Service<T> implements IModel<T> {
   }
   
   public async delete(id: string): Promise<T | null> {
-    const wasFound = await this._model.readOne(id);
+    await this._model.readOne(id);
     
-    if (!wasFound) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 404);
     const deleted = await this._model.delete(id);
 
     return deleted;
