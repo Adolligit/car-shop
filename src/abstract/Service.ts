@@ -25,16 +25,13 @@ abstract class Service<T> implements IModel<T> {
   public async readOne(id: string): Promise<T | null> {
     const wasFound = await this._model.readOne(id);
 
-    if (!wasFound) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 404);
+    if (!wasFound) throw new CatchAllMethodsErros('Object not found', httpSta);
 
     return wasFound;
   }
   
   public async update(id: string, obj: T): Promise<T | null> {
-    const wasFound = await this._model.readOne(id);
-    
-    if (!wasFound) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 404);
-    if (!obj) throw new CatchAllMethodsErros(REFATORA_ESSE_CODIGO, 400);
+    await this._model.readOne(id);
 
     const updated = await this._model.update(id, { ...obj });
     
