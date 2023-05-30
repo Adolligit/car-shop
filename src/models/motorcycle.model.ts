@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { IMotorcycle } from '../interfaces/IMotorcycle';
-import MongooseModel from './odm/mongoose.model';
+import MongooseModel from '../abstract/model.abstract';
 
 const schema = new Schema<IMotorcycle>({
   model: String,

@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import app from './app';
-import connectToDatabase from './models/connection';
+import connectToDatabase from './connection/connect';
 
 const PORT = process.env.API_PORT;
 
