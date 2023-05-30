@@ -2,7 +2,7 @@ import httpStatus from 'http-status';
 import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
 import { IModel } from '../interfaces/IModel';
 
-abstract class Service<T> implements IModel<T> {
+abstract class AbstractService<T> implements IModel<T> {
   private _model: IModel<T>;
 
   constructor(model: IModel<T>) {
@@ -46,4 +46,4 @@ abstract class Service<T> implements IModel<T> {
   }
 }
 
-export default Service;
+export default AbstractService;
