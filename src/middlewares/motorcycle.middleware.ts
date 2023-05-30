@@ -1,8 +1,9 @@
+import httpStatus from 'http-status';
 import { NextFunction, Request, Response } from 'express';
 import { isValidObjectId } from 'mongoose';
 import { ZodError } from 'zod';
 
-import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
+import CatchAllMethodsErrors from '../errors/CatchAllMethodsErrors';
 import { MotorcycleSchemaZod } from '../interfaces/IMotorcycle';
 import { VehicleSchemaZod } from '../interfaces/IVehicle';
 
@@ -16,13 +17,16 @@ class MotorcycleMiddleware {
     } catch (e) {
       const { issues: [{ message, path }] } = e as ZodError;
 
-      throw new CatchAllMethodsErros(`${path[0]}: ${message}`, 400);
+      throw new CatchAllMethodsErrors(`${path[0]}: ${message}`, httpStatus.BAD_REQUEST);
     }
   }
   
   public static idMongoValidation(req: Request, _res: Response, nxt: NextFunction) {
     if (!isValidObjectId(req.params.id)) {
-      throw new CatchAllMethodsErros('Id must have 24 hexadecimal characters', 400);
+      throw new CatchAllMethodsErrors(
+        'Id must have 24 hexadecimal characters',
+        httpStatus.BAD_REQUEST,
+      );
     }
     
     nxt();

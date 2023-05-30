@@ -6,7 +6,7 @@ import mocks from '../../mocks/CarModel';
 import CarService from '../../../services/car.service';
 import CarModel from '../../../models/car.model';
 import { ICar } from '../../../interfaces/ICar';
-import CatchAllMethodsErros from '../../../errors/CatchAllMethodsErrors';
+import CatchAllMethodsErrors from '../../../errors/CatchAllMethodsErrors';
 
 // before, after= executa uma vez antes/depois de todos os testes
 // beforeEach afterEach= executa uma vez antes/depois de cada testes

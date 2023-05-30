@@ -1,5 +1,5 @@
 import httpStatus from 'http-status';
-import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
+import CatchAllMethodsErrors from '../errors/CatchAllMethodsErrors';
 import { IModel } from '../interfaces/IModel';
 
 abstract class AbstractService<T> implements IModel<T> {
@@ -24,7 +24,7 @@ abstract class AbstractService<T> implements IModel<T> {
   public async readOne(id: string): Promise<T | null> {
     const wasFound = await this._model.readOne(id);
 
-    if (!wasFound) throw new CatchAllMethodsErros('Object not found', httpStatus.NOT_FOUND);
+    if (!wasFound) throw new CatchAllMethodsErrors('Object not found', httpStatus.NOT_FOUND);
 
     return wasFound;
   }

@@ -1,4 +1,4 @@
-class CatchAllMethodsErros extends Error {
+class CatchAllMethodsErrors extends Error {
   private _status: number;
 
   constructor(message: string, status: number) {
@@ -11,4 +11,4 @@ class CatchAllMethodsErros extends Error {
   }
 }
 
-export default CatchAllMethodsErros;
+export default CatchAllMethodsErrors;

@@ -1,11 +1,12 @@
+import httpStatus from 'http-status';
 import { NextFunction, Request, Response } from 'express';
-import CatchAllMethodsErros from '../errors/CatchAllMethodsErrors';
+import CatchAllMethodsErrors from '../errors/CatchAllMethodsErrors';
 
 export default (
-  err: CatchAllMethodsErros, // não consigo desestruturar getStatus, pois da erro ZZZZZ TS
+  err: CatchAllMethodsErrors, // não consigo desestruturar getStatus, pois da erro ZZZZZ TS
   _req: Request,
   res: Response,
   _nxt: NextFunction,
 ) => res
-  .status(err.getStatus() || 500) // ai esse Number por causa do TS zzzzzz
+  .status(err.getStatus() || httpStatus.INTERNAL_SERVER_ERROR) // ai esse Number por causa do TS zzzzzz
   .json({ error: err.message }); 
