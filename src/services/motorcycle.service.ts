@@ -1,6 +1,6 @@
-import Service from '../abstract/service.abstract';
+import AbstractService from '../abstract/service.abstract';
 import { IMotorcycle } from '../interfaces/IMotorcycle';
 
-class MotorcycleService extends Service<IMotorcycle> {}
+class MotorcycleService extends AbstractService<IMotorcycle> {}
 
 export default MotorcycleService;
