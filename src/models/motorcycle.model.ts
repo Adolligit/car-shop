@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { IMotorcycle } from '../interfaces/IMotorcycle';
+import { IMotorcycle } from '../interfaces/motorcycle.interface';
 import MongooseModel from '../abstract/model.abstract';
 
 const schema = new Schema<IMotorcycle>({

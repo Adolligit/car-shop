@@ -4,9 +4,9 @@ const { expect } = chai;
 
 import { Request, Response } from 'express';
 import { Model } from 'mongoose';
-import { ICar } from '../../../interfaces/ICar';
+import { ICar } from '../../../interfaces/car.interface';
 
-import mocks from '../../mocks/CarModel';
+import mocks from '../../mocks/car-model.mock';
 import CarModel from '../../../models/car.model';
 import CarController from '../../../controllers/car.controller';
 import CarService from '../../../services/car.service';

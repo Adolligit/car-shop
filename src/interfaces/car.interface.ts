@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { IVehicle } from './IVehicle';
+import { IVehicle } from './vehicle.interface';
 
 export const CarSchemaZod = z.object({
   doorsQty: z.number().int().min(2).max(4),

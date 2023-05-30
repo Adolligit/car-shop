@@ -1,5 +1,5 @@
 import AbstractService from '../abstract/service.abstract';
-import { ICar } from '../interfaces/ICar';
+import { ICar } from '../interfaces/car.interface';
 
 class CarService extends AbstractService<ICar> {}
 

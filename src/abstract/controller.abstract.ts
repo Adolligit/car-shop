@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import IController from '../interfaces/IController';
+import IController from '../interfaces/controller.interface';
 import AbstractService from './service.abstract';
 
 abstract class AbstractController<T> implements IController<T> {

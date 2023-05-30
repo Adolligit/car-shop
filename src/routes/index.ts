@@ -1,6 +1,6 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
-import yaml from '../utils/ConvertYamlFile';
+import yaml from '../utils/convert-yaml-file.utils';
 import car from './car.routes';
 import motorcycle from './motorcycle.routes';
 import ErrorHandler from '../middlewares/error.middleware';

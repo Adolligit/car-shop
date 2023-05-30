@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { IVehicle } from './IVehicle';
+import { IVehicle } from './vehicle.interface';
 
 export const MotorcycleSchemaZod = z.object({
   category: z.enum(['Street', 'Custom', 'Trail']),

@@ -1,6 +1,6 @@
 import httpStatus from 'http-status';
-import CatchAllMethodsErrors from '../errors/CatchAllMethodsErrors';
-import { IModel } from '../interfaces/IModel';
+import CatchAllMethodsErrors from '../errors/catch-all-methods-errors';
+import { IModel } from '../interfaces/model.interface';
 
 abstract class AbstractService<T> implements IModel<T> {
   private _model: IModel<T>;

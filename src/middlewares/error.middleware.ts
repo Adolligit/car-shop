@@ -1,6 +1,6 @@
 import httpStatus from 'http-status';
 import { NextFunction, Request, Response } from 'express';
-import CatchAllMethodsErrors from '../errors/CatchAllMethodsErrors';
+import CatchAllMethodsErrors from '../errors/catch-all-methods-errors';
 
 export default (
   err: CatchAllMethodsErrors, // não consigo desestruturar getStatus, pois da erro ZZZZZ TS

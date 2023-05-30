@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import { ICar } from '../interfaces/ICar';
+import { ICar } from '../interfaces/car.interface';
 import MongooseModel from '../abstract/model.abstract';
 
 const schema = new Schema<ICar>({
