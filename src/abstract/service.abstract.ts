@@ -30,15 +30,14 @@ abstract class AbstractService<T> implements IModel<T> {
   }
   
   public async update(id: string, obj: T): Promise<T | null> {
-    await this._model.readOne(id);
-
-    const updated = await this._model.update(id, { ...obj });
+    await this.readOne(id);
+    await this._model.update(id, { ...obj });
     
-    return updated;
+    return this.readOne(id);
   }
   
   public async delete(id: string): Promise<T | null> {
-    await this._model.readOne(id);
+    await this.readOne(id);
     
     const deleted = await this._model.delete(id);
 
