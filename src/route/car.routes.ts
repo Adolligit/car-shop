@@ -1,10 +1,10 @@
 import express from 'express';
 import 'express-async-errors';
 
-import CarModel from '../models/car.model';
-import CarController from '../controllers/car.controller';
-import CarService from '../services/car.service';
-import middleware from '../middlewares/car.middleware';
+import CarModel from '../model/car.model';
+import CarController from '../controller/car.controller';
+import CarService from '../service/car.service';
+import middleware from '../middleware/car.middleware';
 
 const model = new CarModel();
 const service = new CarService(model);

@@ -2,11 +2,11 @@ import * as sinon from 'sinon';
 import chai from 'chai';
 const { expect } = chai;
 
-import mocks from '../../mocks/car-model.mock';
-import CarService from '../../../services/car.service';
-import CarModel from '../../../models/car.model';
-import { ICar } from '../../../interfaces/car.interface';
-import CatchAllMethodsErrors from '../../../errors/catch-all-methods-errors';
+import mocks from '../../mock/car-model.mock';
+import CarService from '../../../service/car.service';
+import CarModel from '../../../model/car.model';
+import { ICar } from '../../../interface/car.interface';
+import CatchAllMethodsErrors from '../../../error/catch-all-methods-errors';
 
 // before, after= executa uma vez antes/depois de todos os testes
 // beforeEach afterEach= executa uma vez antes/depois de cada testes

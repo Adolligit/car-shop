@@ -3,9 +3,9 @@ import { NextFunction, Request, Response } from 'express';
 import { isValidObjectId } from 'mongoose';
 import { ZodError } from 'zod';
 
-import CatchAllMethodsErrors from '../errors/catch-all-methods-errors';
-import { MotorcycleSchemaZod } from '../interfaces/motorcycle.interface';
-import { VehicleSchemaZod } from '../interfaces/vehicle.interface';
+import CatchAllMethodsErrors from '../error/catch-all-methods-errors';
+import { MotorcycleSchemaZod } from '../interface/motorcycle.interface';
+import { VehicleSchemaZod } from '../interface/vehicle.interface';
 
 const motorcycleSchema = MotorcycleSchemaZod.merge(VehicleSchemaZod);
 

@@ -4,12 +4,12 @@ const { expect } = chai;
 
 import { Request, Response } from 'express';
 import { Model } from 'mongoose';
-import { ICar } from '../../../interfaces/car.interface';
+import { ICar } from '../../../interface/car.interface';
 
-import mocks from '../../mocks/car-model.mock';
-import CarModel from '../../../models/car.model';
-import CarController from '../../../controllers/car.controller';
-import CarService from '../../../services/car.service';
+import mocks from '../../mock/car-model.mock';
+import CarModel from '../../../model/car.model';
+import CarController from '../../../controller/car.controller';
+import CarService from '../../../service/car.service';
 
 // before after= executa uma vez antes de todos os testes
 // beforeAll afterAll= executa uma vez antes de cada testes

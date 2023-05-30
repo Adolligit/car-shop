@@ -2,10 +2,10 @@ import * as sinon from 'sinon';
 import chai from 'chai';
 const { expect } = chai;
 
-import mocks from '../../mocks/car-model.mock';
+import mocks from '../../mock/car-model.mock';
 import { Model } from 'mongoose';
-import CarModel from '../../../models/car.model';
-import { ICar } from '../../../interfaces/car.interface';
+import CarModel from '../../../model/car.model';
+import { ICar } from '../../../interface/car.interface';
 
 // before after= executa uma vez antes de todos os testes
 // beforeAll afterAll= executa uma vez antes de cada testes

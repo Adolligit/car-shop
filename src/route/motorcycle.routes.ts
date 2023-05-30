@@ -1,10 +1,10 @@
 import express from 'express';
 import 'express-async-errors';
 
-import MotorcycleModel from '../models/motorcycle.model';
-import MotorcycleController from '../controllers/motorcycle.controller';
-import MotorcycleService from '../services/motorcycle.service';
-import middleware from '../middlewares/motorcycle.middleware';
+import MotorcycleModel from '../model/motorcycle.model';
+import MotorcycleController from '../controller/motorcycle.controller';
+import MotorcycleService from '../service/motorcycle.service';
+import middleware from '../middleware/motorcycle.middleware';
 
 const model = new MotorcycleModel();
 const service = new MotorcycleService(model);
