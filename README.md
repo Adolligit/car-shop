@@ -50,7 +50,7 @@ Considerando que você já tenha instalado todas as dependências necessárias, 
 
 Executar todos os teste criados para as camadas *Model, Controller* e *Service*:
 ```bash
-npm run test
+npm run test:dev
 ```
 
 Verificar cobertura total de testes:
