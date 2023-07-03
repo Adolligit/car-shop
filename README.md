@@ -116,6 +116,7 @@ Você pode utilizar qualquer Client API para testar o Car Shop, contudo, eu disp
 Desta forma, quando a API estiver em execução, você poderá visitar http://127.0.0.1:3001/v1/docs/ e visualizar a página da documentação e testar a API.
 
 <a href="https://swagger.io/tools/swagger-ui/"><img align="center" alt="NodeJs" src="https://raw.githubusercontent.com/Adolligit/car-shop/main/img/ss1.png"></a>
+> 🗣️(Dica): O banco de dados não esta populado. Portanto é uma boa ideia começar cadastrando os dados 😉
 
 ##  Linguagens e ferramentas:
 <div>
