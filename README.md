@@ -132,7 +132,4 @@ Desta forma, quando a API estiver em execução, você poderá visitar http://12
 </div>
 
 ## Agradecimento
-Agradeço pela [@tryber](https://github.com/tryber) pela idealização do projeto, pois desta forma foi possível colocar em prática meus conhecimentos sobre a criação de API Rest. Não é uma experiência de mercado, mas uma experiência de projeto extremamente importante para o meu desenvolvimento profissional. Muito obrigado!
-
-
-<!-- Ta faltando descrever a instalação do projeto com o Dockerfile / docker-compose.yml -->
+Agradeço a [@tryber](https://github.com/tryber) pela idealização do projeto, pois desta forma foi possível colocar em prática meus conhecimentos sobre a criação de API Rest e foi, sem dúvida, uma experiência de projeto extremamente importante para o meu desenvolvimento profissional.
