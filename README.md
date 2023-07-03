@@ -7,58 +7,114 @@ Esta API é um *CRUD* feito com os princípios da *Programação Orientada á Ob
 Este projeto foi desenvolvido em **Node.js + Express.js + TypeScript**, utilizando **Mongoose.js** para comunicação com o banco de dados **MongoDB**. Além disso, foram realizados testes nas camadas *Model, Controller e Service* com **Mocha + Chai + Sinon**.
 
 ## Como eu faço para executar este projeto?
-⚠️ Você deve possuir o **MongoDB** instalado para prosseguir com os próximos passos. ⚠️
-
-👇 Se já possui ele instalado, clique em "**Instalação do Car Shop**". Caso contrário, siga o passo-a-passo, clicando em "**Eu não tenho MongoDB**".
+Primeiro de tudo, clone o projeto na sua máquina local e entre na pasta do projeto:
+```bash
+git clone git@github.com:Adolligit/car-shop.git && 
+cd ./car-shop
+```
+### Instalação
+🚨 As versões descritas nas instalações são **fortemente recomendadas**. No entanto, caso queira tentar em uma versão diferente, considere a possível aparição de erros durante a execução do projeto.
 
 <details>
-<summary><b>Eu não tenho MongoDB</b></summary>
+  <summary>Instalar com Docker 🐳</summary><br>
+<strong>Requisitos</strong>
+</br>Você deve possuir as seguintes ferramentas:
+<ul>
+    <li>Docker: v24.0.2</li>
+    <li>Docker Compose: v2.19.0</li>
+</ul>
 
-Existem muitos tipos de instalações diferentes onde cada uma corresponde á um respectivo sistema operacional.
+  ⚠️ Se você estiver usando **Linux**, desative o **MongoDB** localmente para evitar conflitos de porta:
+  ```bash
+  systemctl stop mongod
+  ```
 
-Clicando no link do com o nome do seu sistema operacional, você será direcionado para um tutorial da própria documentação do MongoDB.
+<hr>
 
-[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.mongodb.com/docs/manual/administration/install-on-linux/) [![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/) [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)
-
-Depois disso, siga com a instalação do **Car Shop**.
+  1. Crie e inicie os contêiners:
+  ```bash
+  docker-compose up -d
+  ```
+  2. Entre no contêiner da aplicação:
+  ```bash
+  docker exec -it car_shop bash
+  ```
+  ---
 </details>
 
 <details>
-<summary><b>Instalação do Car Shop</b></summary>
+<summary>Instalar localmente 💻</summary>
+<strong>Requisitos</strong>
+</br>Você deve possuir as seguintes ferramentas:
+<ul>
+    <li>npm: v9.6.7</li>
+    <li>Node: v20.3</li>
+    <li>MongoDB: v6.0</li>
+</ul>
 
-Clone o projeto na sua máquina local:
+⚠️ Se você usa **Linux**, verifique se o serviço do **MongoDB** esta ativo: 
 ```bash
-git clone git@github.com:Adolligit/car-shop.git
+systemctl status mongod
+```
+<hr>
+
+1. Crie o arquivo <b>.env</b> na pasta raiz
+```bash
+touch .env
 ```
 
-Entre na pasta **/car-shop** e instale as dependências:
-```bash
-cd /car-shop
+2. Copie e cole as informações a seguir:
 
-npm install
+```bash
+# MongoDB
+MDB_URI=
+MDB_HOST=127.0.0.1
+MDB_PORT=27017
+MDB_NAME=CarShop
+
+# API
+API_PORT=3001
+```
+> 🗣️(Dica): Você pode conectar a aplicação com um banco remoto, adicionado a URI do banco em **MDB_URI**.
+
+<hr>
+</details>
+
+### Execução
+⚠️ Os comandos a seguir podem ser executados dentro do Container ou localmente. ⚠️
+
+
+Iniciar diretamente o projeto:
+```bash
+npm start
 ```
 
-Inicie a aplicação em modo de desenvolvimento:
+Iniciar o projeto em modo de desenvolvimento (com **nodemon**):
 ```bash
 npm run dev
 ```
 
-</details>
-
-## Como eu posso executar os testes criados?
-Considerando que você já tenha instalado todas as dependências necessárias, conseguindo desta forma executar o **Car Shop**, para você testar, você pode executar os seguintes comandos:
-
-Executar todos os teste criados para as camadas *Model, Controller* e *Service*:
+Executar a cobertura de testes:
 ```bash
 npm run test:dev
 ```
 
-Verificar cobertura total de testes:
+Executa os testes e depois criar a pasta **./coverage** que contém um relatório:
 ```bash
-npm run test:coverage
+npm run test:dev
 ```
+> 🗣️(Dica): Utilizando a extensão **Live Server** no Visual Studio Code, você poderá visualizar a página com o relatório navegando até pasta criada.
+
+Executar o **ESLint** para verificar os erros do código estático:
+```bash
+npm run lint
+```
+
+
+
 ##  Linguagens e ferramentas:
 <div>
+    <a href="https://swagger.io/tools/swagger-ui/"><img align="center" alt="NodeJs" height="40" width="50" src="https://camo.githubusercontent.com/96e43701d83561899724a89d71187445b7b8f4fe84518a3ea5bec8f85bd207bf/68747470733a2f2f63646e2e737667706f726e2e636f6d2f6c6f676f732f737761676765722e737667"></a>
     <a href="https://nodejs.org/en/"><img align="center" alt="NodeJs" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"></a>
     <a href="https://expressjs.com/pt-br/"><img align="center" alt="Express" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"></a>
     <a href="https://www.typescriptlang.org/"><img align="center" alt="TypeScript" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"></a>
