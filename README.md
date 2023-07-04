@@ -57,10 +57,11 @@ Escolha abaixo um tipo de instalação:
     <li>MongoDB: v6.0</li>
 </ul>
 
-⚠️ Se você usa **Linux**, verifique se o serviço do **MongoDB** esta ativo: 
+Se você usa **Linux**, verifique se o serviço do **MongoDB** esta ativo: 
 ```bash
 systemctl status mongod
 ```
+Caso esteja desativado, substitua **status** por **start** no comando acima.
 <hr>
 
 1. Crie o arquivo <b>.env</b> na pasta raiz
