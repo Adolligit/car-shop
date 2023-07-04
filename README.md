@@ -81,13 +81,7 @@ API_PORT=3001
 </details>
 
 ### Execução
-⚠️ Os comandos a seguir podem ser executados dentro do Container ou localmente. ⚠️
-
-
-Iniciar diretamente o projeto:
-```bash
-npm start
-```
+⚠️ Os comandos a seguir podem ser executados dentro do Container ou localmente.
 
 Iniciar o projeto em modo de desenvolvimento (com **nodemon**):
 ```bash
