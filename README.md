@@ -100,7 +100,7 @@ npm run test:dev
 
 Executa os testes e depois criar a pasta **./coverage** que contém um relatório:
 ```bash
-npm run test:dev
+npm run test:coverage
 ```
 > 🗣️(Dica): Utilizando a extensão **Live Server** no Visual Studio Code, você poderá visualizar a página com o relatório navegando até pasta criada.
 
