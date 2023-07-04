@@ -38,7 +38,7 @@ Escolha abaixo um tipo de instalação:
 
   1. Crie e inicie os contêiners:
   ```bash
-  docker-compose up -d
+  docker compose up -d
   ```
   2. Entre no contêiner da aplicação:
   ```bash
