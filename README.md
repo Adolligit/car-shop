@@ -12,9 +12,14 @@ Primeiro de tudo, clone o projeto na sua máquina local e entre na pasta do proj
 git clone git@github.com:Adolligit/car-shop.git && 
 cd ./car-shop
 ```
+Depois instale as dependências:
+```bash
+npm install
+```
 ### Instalação
 🚨 As versões descritas nas instalações são **fortemente recomendadas**. No entanto, caso queira tentar em uma versão diferente, considere a possível aparição de erros durante a execução do projeto.
 
+Escolha abaixo um tipo de instalação:
 <details>
   <summary>Instalar com Docker 🐳</summary>
 </br><b>Requisitos</b>
