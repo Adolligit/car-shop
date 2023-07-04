@@ -102,7 +102,7 @@ Executa os testes e depois criar a pasta **./coverage** que contém um relatóri
 ```bash
 npm run test:coverage
 ```
-> 🗣️(Dica): Utilizando a extensão **Live Server** no Visual Studio Code, você poderá visualizar a página com o relatório navegando até pasta criada.
+> 🗣️(Dica): Utilizando a extensão **Live Server** no Visual Studio Code, você poderá visualizar a página com o relatório navegando até pasta criada e abrindo o arquivo **index.html** no navegador.
 
 Executar o **ESLint** para verificar os erros do código estático:
 ```bash
