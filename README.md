@@ -9,8 +9,7 @@ Este projeto foi desenvolvido em **Node.js + Express.js + TypeScript**, utilizan
 ## Como eu faço para executar este projeto?
 Primeiro de tudo, clone o projeto na sua máquina local e entre na pasta do projeto:
 ```bash
-git clone git@github.com:Adolligit/car-shop.git && 
-cd ./car-shop
+git clone git@github.com:Adolligit/car-shop.git && cd ./car-shop
 ```
 Depois instale as dependências:
 ```bash
