@@ -7,7 +7,7 @@ info:
     name: Adelson
     url: https://www.linkedin.com/in/adelson-lima/
 servers:
-  - url: http://localhost:API_PORT/v1/
+  - url: http://127.0.0.1:3001/v1
     description: API_PORT é referente ao valor da variável informada no arquivo '.env'
 paths:
   /cars:
