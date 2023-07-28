@@ -8,7 +8,7 @@ info:
     url: https://www.linkedin.com/in/adelson-lima/
 servers:
   - url: http://127.0.0.1:3001/v1
-    description: API_PORT é referente ao valor da variável informada no arquivo '.env'
+    description: 3001 é referente ao valor da variável API_PORT do arquivo '.env'
 paths:
   /cars:
     post:
