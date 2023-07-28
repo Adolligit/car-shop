@@ -86,7 +86,7 @@ paths:
       description: Informando o ID, uma verificação será realizada para validar a sintaxe e a existência do seu registro. Em resultado positivo, irá atualizar os dados relacionados ao carro e retornará esses dados junto ao ID.
       requestBody:
         required: true
-        description: Aqui no Swagger, as informações retornadas um pouco diferentes das retornadas por um Client API, como Postman, por exemplo. 
+        description: Aqui no Swagger, as informações são retornadas um pouco diferentes das retornadas por um Client API, como Postman, por exemplo. 
         content:
           application/json:
             schema:
