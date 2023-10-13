@@ -6,7 +6,7 @@ services:
     container_name: car_shop
     tty: true
     stdin_open: true
-    command: bash -c "npm install && npm run dev"
+    command: bash
     restart: always
     working_dir: /app
     volumes:
@@ -14,10 +14,10 @@ services:
     depends_on:
       - mongodb
     ports:
-      - 3001:3001
+      - 3000:3000
     environment:
       - MDB_URI=mongodb://mongodb:27017/CarShop
-      - API_PORT=3001
+      - API_PORT=3000
 
   mongodb:
     image: mongo:5.0.7
