@@ -129,6 +129,3 @@ Desta forma, quando a API estiver em execução, você poderá visitar http://12
     <a href="https://www.chaijs.com/"><img align="center" alt="Chai" height="40" width="50" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/chaijs_logo_icon_168435.png"></a>
     <a href="https://sinonjs.org/"><img align="center" alt="Sinon" height="40" width="50" src="https://avatars.githubusercontent.com/u/6570253?s=280&v=4"></a>
 </div>
-
-## Agradecimento
-Agradeço a [@tryber](https://github.com/tryber) pela idealização do projeto, pois desta forma foi possível colocar em prática meus conhecimentos sobre a criação de API Rest e foi, sem dúvida, uma experiência de projeto extremamente importante para o meu desenvolvimento profissional.
